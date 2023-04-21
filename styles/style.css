@@ -2,46 +2,331 @@
 /* CSS RESET */
 /*************/
 
+@font-face {
+  font-family: Mario;
+  src: url('../fonts/supermario256-webfont.woff') format('woff2'),
+       url('../fonts/supermario256-webfont.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
   box-sizing:border-box;  
 }
 
-body {
+body {  
   margin: 0;
+  background-color: #e4000f;
+  font-family: Verdana, sans-serif;
 }
 
 button:not([disabled]) {
-  cursor:pointer;}
+  cursor:pointer;
+}
 
+h1 {
+  font-family: 'Mario', sans-serif;
+  position: absolute;
+  top: 14em;
+  left: 5.4em;
+  z-index: 100;
+  width: 14.7em;
+  text-align: center;
+  animation-name: titel1983;
+  animation-duration: 1s; 
+  animation-iteration-count: 1;
+  animation-delay: 10s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes titel1983 {
+  100% {
+    content: "1983";
+  }
+}
+
+header p {
+  position: absolute;
+  top: 31em;
+  left: 9em;
+  z-index: 100;
+  width: 32.8em;
+  text-align: center;
+}
 
 .background {
   position: absolute;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: auto;
 }
+
+.mario1985 {
+  position: absolute;
+  width: 2.7em;
+  top: 0.9em;
+  left: 2em;
+  animation-name: marioTube, marioToTheRight, marioJump;
+  animation-duration: 1s, 2s, 2s; 
+  animation-iteration-count: 1, 1, 1;
+  animation-delay: 0s, 1.5s, 4s;
+  animation-timing-function: linear, linear, linear;
+  animation-fill-mode: forwards, forwards, forwards;
+}
+
+@keyframes marioTube {
+  0% {
+    transform: translatey(0);
+  }
+  100% {
+    transform: translatey(275%);
+  }
+}
+
+@keyframes marioToTheRight {
+  0% {
+    transform: translate(0, 275%);
+  }
+  100% {
+    transform: translate(245%, 275%);
+  }
+}
+
+@keyframes marioJump {
+  0% {
+    transform: translate(245%, 275%);
+    animation-timing-function: ease;
+  } 
+  50% {
+    transform: translate(245%, 214%);
+    animation-timing-function:ease;
+  }
+  100% {
+    transform: translate(245%, 275%);
+  }
+}
+
+/* @keyframes marioEvolution {
+  100% {
+    transform: translate(245%, 205%);
+    content: url("https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/a9e792fb75ef894.png");
+  }
+} */
+
+/* @keyframes vraagtekenNaarBlok {
+  100% {
+    content: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSYfuz8UaTfUJ-RMmTPjLhd1Y0FIdXYLtI7axAufbBlOkralXAf");
+  }
+} */
 
 .tube {
   position: absolute;
-  width: 5%;
-  padding: 0 0 0 1em;
+  width: 5em;
+  top: 1em;
+  left: 1em;
 }
 
-.vraagteken {
+.goomba1 {
   position: absolute;
-  width: 3%;
-  left: 10%;
-  top: 31%;
+  width: 2.7em;
+  top: 19.8em;
+  left: 11.5em;
 }
 
+.goomba2 {
+  position: absolute;
+  width: 2.7em;
+  top: 19.8em;
+  left: 56.3em;
+}
 
+.goomba3 {
+  position: absolute;
+  width: 2.7em;
+  top: 25.1em;
+  left: 74.8em;
+}
+
+.ster1 {
+  position: absolute;
+  width: 2.7em;
+  top: 14.3em;
+  left: 14em;
+}
+
+.ster2 {
+  position: absolute;
+  width: 2.7em;
+  top: 14.4em;
+  left: 58.9em;
+}
+
+.ster3 {
+  position: absolute;
+  width: 2.7em;
+  top: 19.8em;
+  left: 77.5em;
+}
+
+.vraagteken1 {
+  position: absolute;
+  width: 2.7em;
+  left: 8.6em;
+  top: 6em;
+  animation-name: vraagtekenNaarBlok;
+  animation-duration: 1s; 
+  animation-iteration-count: 1;
+  animation-delay: 4.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes vraagtekenNaarBlok {
+  100% {
+    content: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSYfuz8UaTfUJ-RMmTPjLhd1Y0FIdXYLtI7axAufbBlOkralXAf");
+  }
+}
+
+.vraagteken2 {
+  position: absolute;
+  width: 2.7em;
+  left: 8.6em;
+  top: 14.4em;
+}
+
+.vraagteken3 {
+  position: absolute;
+  width: 2.7em;
+  left: 21.7em;
+  top: 11.7em;
+}
+
+.vraagteken4 {
+  position: absolute;
+  width: 2.7em;
+  left: 35.1em;
+  top: 9em;
+}
+
+.vraagteken5 {
+  position: absolute;
+  width: 2.7em;
+  left: 48.3em;
+  top: 6.6em;
+}
+
+.vraagteken6 {
+  position: absolute;
+  width: 2.7em;
+  left: 53.7em;
+  top: 14.4em;
+}
+
+.vraagteken7 {
+  position: absolute;
+  width: 2.7em;
+  left: 66.9em;
+  top: 12em;
+}
+
+.vraagteken8 {
+  position: absolute;
+  width: 2.7em;
+  left: 72.2em;
+  top: 19.8em;
+}
+
+.coin1 {
+  position: absolute;
+  width: 1.8em;
+  left: 19.6em;
+  top: 17.4em;
+}
+
+.coin2 {
+  position: absolute;
+  width: 1.8em;
+  left: 24.9em;
+  top: 17.4em;
+}
+
+.coin3 {
+  position: absolute;
+  width: 1.8em;
+  left: 27.5em;
+  top: 17.4em;
+}
+
+.coin4 {
+  position: absolute;
+  width: 1.8em;
+  left: 32.8em;
+  top: 14.7em;
+}
+
+.coin5 {
+  position: absolute;
+  width: 1.8em;
+  left: 38.2em;
+  top: 14.7em;
+}
+
+.coin6 {
+  position: absolute;
+  width: 1.8em;
+  left: 40.8em;
+  top: 14.7em;
+}
+
+.coin7 {
+  position: absolute;
+  width: 1.8em;
+  left: 46.1em;
+  top: 12.1em;
+}
+
+.coin8 {
+  position: absolute;
+  width: 1.8em;
+  left: 51.3em;
+  top: 12.1em;
+}
+
+.coin9 {
+  position: absolute;
+  width: 1.8em;
+  left: 64.6em;
+  top: 17.4em;
+}
+
+.coin10 {
+  position: absolute;
+  width: 1.8em;
+  left: 69.9em;
+  top: 17.4em;
+}
+
+.coin11 {
+  position: absolute;
+  width: 1.8em;
+  left: 72.6em;
+  top: 17.4em;
+}
+
+.vlag {
+  position: absolute;
+  width: 4em;
+  left: 80.8em;
+  top: 26.7em;
+}
 
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 
 :root {
-  --color-headings:crimson
+  --color-headings: black;
 }
 
 
