@@ -21,11 +21,32 @@ body {
   font-family: Verdana, sans-serif;
 }
 
-button:not([disabled]) {
-  cursor:pointer;
+button.sound {
+  position: absolute;
+  background-color: #e4000f;
+  width: 8em;
+  height: 4em;
+  font-family: 'Mario', sans-serif;
+  color: white;
+  border: 2px solid white;
+  left: 92.5em;
+  top: 2.5em;
+  text-indent: -9999px;
+  line-height: 0;
 }
 
-h1 {
+button.sound::after {
+  content: "MY NEW BUTTON TEXT";
+  text-indent: 0;  
+  display: block;
+  line-height: initial;
+}
+
+button.sound:hover {
+  background-color: #b6000c;
+}
+
+#titel {
   font-family: 'Mario', sans-serif;
   position: absolute;
   top: 14em;
@@ -33,21 +54,10 @@ h1 {
   z-index: 100;
   width: 14.7em;
   text-align: center;
-  animation-name: titel1983;
-  animation-duration: 1s; 
-  animation-iteration-count: 1;
-  animation-delay: 10s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+  content: 'test';
 }
 
-@keyframes titel1983 {
-  100% {
-    content: "1983";
-  }
-}
-
-header p {
+#paragraaf {
   position: absolute;
   top: 31em;
   left: 9em;
@@ -62,7 +72,7 @@ header p {
   width: auto;
 }
 
-.mario1985 {
+.mario {
   position: absolute;
   width: 2.7em;
   top: 0.9em;
@@ -107,6 +117,61 @@ header p {
   }
 }
 
+/* 1988 */
+.mario1988 {
+  position: absolute;
+  width: 2.7em;
+  top: 0.9em;
+  left: 2em;
+  animation-name: marioToTheRight1988, marioToTheBottom1988, marioToTheLeft1988, marioJump1988;
+  animation-duration: 1s, 2s, 1s, 2s; 
+  animation-iteration-count: 1, 1, 1, 1;
+  animation-delay: 0s, 1.5s, 3.5s, 6.5s;
+  animation-timing-function: linear, linear, linear, linear;
+  animation-fill-mode: forwards, forwards, forwards, forwards;
+}
+
+@keyframes marioToTheRight1988 {
+  0% {
+    transform: translate(245%, 275%);
+  }
+  100% {
+    transform: translate(350%, 275%);
+  }
+}
+
+@keyframes marioToTheBottom1988 {
+  0% {
+    transform: translate(350%, 275%);
+  }
+  100% {
+    transform: translate(350%, 500%);
+  }
+}
+
+@keyframes marioToTheLeft1988 {
+  0% {
+    transform: translate(350%, 500%);
+  }
+  100% {
+    transform: translate(240%, 500%);
+  }
+}
+
+@keyframes marioJump1988 {
+  0% {
+    transform: translate(240%, 500%);
+    animation-timing-function: ease;
+  }
+  50% {
+    transform: translate(240%, 450%);
+    animation-timing-function: ease;
+  }
+  100% {
+    transform: translate(240%, 500%);
+  }
+}
+
 /* @keyframes marioEvolution {
   100% {
     transform: translate(245%, 205%);
@@ -132,6 +197,22 @@ header p {
   width: 2.7em;
   top: 19.8em;
   left: 11.5em;
+  transform-origin:center bottom;
+  animation-name: goombaScale;
+  animation-duration: 1s; 
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes goombaScale {
+  0% {
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(1.25, .10);
+  }
 }
 
 .goomba2 {
@@ -188,11 +269,25 @@ header p {
   }
 }
 
-.vraagteken2 {
+#vraagteken2 {
   position: absolute;
   width: 2.7em;
   left: 8.6em;
   top: 14.4em;
+  cursor: pointer;
+  font-size: 1em;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#vraagteken2 img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .vraagteken3 {
