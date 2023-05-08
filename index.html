@@ -19,8 +19,12 @@
 	</header>
 	
 	<main>
-		<img class="background" src="images/marioBackground.png" alt="Mario background light" media="(prefers-color-scheme: light)">
-		<img class="background" src="images/marioBackgroundDark.png" alt="Mario background dark" media="(prefers-color-scheme: dark)">
+		<!-- bron: https://dev.to/ziratsu/switch-to-a-darker-image-when-on-dark-mode-2lkh -->
+		<picture>
+			<source class="background" srcset="images/marioBackgroundDark.png" media="(prefers-color-scheme:dark)">
+			<img class="background" src="images/marioBackground.png">
+		</picture>
+
 		<img class="flag" src="images/flag.png" alt="flag">
 		<img class="mario" src="images/mario1983.png" alt="Mario character">
 		<img class="tube" src="images/marioTube.png" alt="tube">

@@ -24,10 +24,11 @@
 /*********************/
 
 :root {
-  --border-button: 1.000em solid white;
+  --border-button: 2px solid white;
 
   --color-headings: black;
-  --color-hover: #b6000c;
+  --color-hover-questionmarkButton: #0006;
+  --color-hover-musicButton: #b6000c;
   --color-primary: #e4000f;
   --color-text: white;
 }
@@ -38,7 +39,8 @@
     --border-button: 2px solid white;
 
     --color-headings: black;
-    --color-hover: #92000a;
+    --color-hover-questionmarkButton: #0006;
+    --color-hover-musicButton: #92000a;
     --color-primary: #b6000c;
     --color-text: white;
   }
@@ -53,7 +55,7 @@
 /********************/
 
 button:hover {
-  background-color: var(--color-hover);
+  background-color: var(--color-hover-musicButton);
 }
 
 body {  
@@ -122,7 +124,8 @@ ol {
 }
 
 .musicButton:hover {
-  background-color: var(color-hover);
+  background-color: var(--color-hover-musicButton);
+  cursor: pointer;
 }
 
 
@@ -172,7 +175,8 @@ ol {
   content:"";
   position: absolute;
   inset:0; /* top:0; bottom:0; left:0; right:0; */
-  background-color: #0006;
+  background-color: var(--color-hover-questionmarkButton);
+  cursor: pointer;
 }
 
 .mario1983 {
@@ -267,7 +271,8 @@ ol {
   content:"";
   position: absolute;
   inset:0; /* top:0; bottom:0; left:0; right:0; */
-  background-color: #0006;
+  background-color: var(--color-hover-questionmarkButton);
+  cursor: pointer;
 }
 
 .mario1988 {
@@ -397,7 +402,8 @@ ol {
   content:"";
   position: absolute;
   inset:0; /* top:0; bottom:0; left:0; right:0; */
-  background-color: #0006;
+  background-color: var(--color-hover-questionmarkButton);
+  cursor: pointer;
 }
 
 .mario1989 {
@@ -528,7 +534,8 @@ ol {
   content:"";
   position: absolute;
   inset:0; /* top:0; bottom:0; left:0; right:0; */
-  background-color: #0006;
+  background-color: var(--color-hover-questionmarkButton);
+  cursor: pointer;
 }
 
 .mario1991 {
@@ -674,7 +681,8 @@ ol {
   content:"";
   position: absolute;
   inset:0; /* top:0; bottom:0; left:0; right:0; */
-  background-color: #0006;
+  background-color: var(--color-hover-questionmarkButton);
+  cursor: pointer;
 }
 
 .mario1996 {
@@ -815,7 +823,7 @@ ol {
   content:"";
   position: absolute;
   inset:0; /* top:0; bottom:0; left:0; right:0; */
-  background-color: #0006;
+  background-color: var(--color-hover-questionmarkButton);
 }
 
 .mario2002 {
@@ -936,7 +944,7 @@ ol {
   content:"";
   position: absolute;
   inset:0; /* top:0; bottom:0; left:0; right:0; */
-  background-color: #0006;
+  background-color: var(--color-hover-questionmarkButton);
 }
 
 .mario2006 {
@@ -1061,7 +1069,7 @@ ol {
   content:"";
   position: absolute;
   inset:0; /* top:0; bottom:0; left:0; right:0; */
-  background-color: #0006;
+  background-color: var(--color-hover-questionmarkButton);
 }
 
 .mario2007 {

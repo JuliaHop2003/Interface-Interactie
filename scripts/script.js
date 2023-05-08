@@ -5,6 +5,8 @@ console.log("Howdy!");
 /* SOUND ON/OFF BUTTON */
 /***********************/
 
+// Dit heb ik afgekeken bij een eerder project die ik heb gedaan: https://github.com/JuliaHop2003/FvD/blob/main/opdracht2/scripts/index.js
+
 const onOffButton = document.querySelector(".musicButton");
 
 function playMusic(event) {
