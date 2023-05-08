@@ -12,70 +12,173 @@
 
 /* naar een idee van Jen Simmons */
 *, *::after, *::before {
-  box-sizing:border-box;  
+  box-sizing: border-box;  
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+  --border-button: 1.000em solid white;
+
+  --color-headings: black;
+  --color-hover: #b6000c;
+  --color-primary: #e4000f;
+  --color-text: white;
+}
+
+
+@media (prefers-color-scheme:dark) {
+  :root {
+    --border-button: 2px solid white;
+
+    --color-headings: black;
+    --color-hover: #92000a;
+    --color-primary: #b6000c;
+    --color-text: white;
+  }
+}
+
+
+
+
+
+/********************/
+/* ALGEMENE STYLING */
+/********************/
+
+button:hover {
+  background-color: var(--color-hover);
 }
 
 body {  
   margin: 0;
-  background-color: #e4000f;
+  background-color: var(--color-primary);
   font-family: Verdana, sans-serif;
+  height: 100%;
 }
 
-button.sound {
-  position: absolute;
-  background-color: #e4000f;
-  width: 8em;
-  height: 4em;
-  font-family: 'Mario', sans-serif;
-  color: white;
-  border: 2px solid white;
-  left: 92.5em;
-  top: 2.5em;
-  text-indent: -9999px;
-  line-height: 0;
-}
-
-button.sound::after {
-  content: "MY NEW BUTTON TEXT";
-  text-indent: 0;  
-  display: block;
-  line-height: initial;
-}
-
-button.sound:hover {
-  background-color: #b6000c;
-}
-
-#titel {
+h1 {
   font-family: 'Mario', sans-serif;
   position: absolute;
   top: 14em;
-  left: 5.4em;
+  left: 3.8em;
   z-index: 100;
-  width: 14.7em;
+  width: 18em;
   text-align: center;
-  content: 'test';
+  color: var(--color-headings);
+  margin: 0;
 }
 
-#paragraaf {
+p {
   position: absolute;
-  top: 31em;
+  top: 30em;
   left: 9em;
   z-index: 100;
   width: 32.8em;
   text-align: center;
 }
 
+ol {
+  margin:0;
+  padding:0;
+}
+
 .background {
   position: absolute;
-  height: 100vh;
+  height: 47.688em;
   width: auto;
 }
 
-.mario {
+.flag {
+  position: absolute;
+  width: 4em;
+  left: 80.8em;
+  top: 25.7em;
+}
+
+.tube {
+  position: absolute;
+  width: 5em;
+  top: 0;
+  left: 1em;
+}
+
+.musicButton {
+  position: absolute;
+  background-color: var(--color-primary);
+  width: 8em;
+  height: 4em;
+  font-family: 'Mario', sans-serif;
+  color: var(--color-text);
+  border: var(--border-button);
+  left: 92.5em;
+  top: 1em;
+}
+
+.musicButton:hover {
+  background-color: var(color-hover);
+}
+
+
+
+
+
+/********/
+/* 1983 */
+/********/
+
+.questionmark1983 {
   position: absolute;
   width: 2.7em;
-  top: 0.9em;
+  left: 8.6em;
+  top: 5em;
+  cursor: pointer;
+  font-size: 1em;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.questionmark1983 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.questionmark1983.changed img {
+  /* content:url("../images/marioBlok.png"); */
+  animation-name: questionmark1983Changed;
+  animation-duration: 0s;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes questionmark1983Changed {
+  100% {
+    content:url("../images/marioBlok.png");
+  }
+}
+
+.questionmark1983:hover::after {
+  content:"";
+  position: absolute;
+  inset:0; /* top:0; bottom:0; left:0; right:0; */
+  background-color: #0006;
+}
+
+.mario1983 {
+  position: absolute;
+  width: 2.7em;
+  top: 0;
   left: 2em;
   animation-name: marioTube, marioToTheRight, marioJump;
   animation-duration: 1s, 2s, 2s; 
@@ -117,16 +220,65 @@ button.sound:hover {
   }
 }
 
+
+
+
+
+/********/
 /* 1988 */
+/********/
+
+.questionmark1988 {
+  position: absolute;
+  width: 2.7em;
+  left: 8.6em;
+  top: 13.4em;
+  cursor: pointer;
+  font-size: 1em;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.questionmark1988 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.questionmark1988.changed img {
+  /* content:url("../images/marioBlok.png"); */
+  animation-name: questionmark1988Changed;
+  animation-duration: 0s;
+  animation-delay: 6.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes questionmark1988Changed {
+  100% {
+    content:url("../images/marioBlok.png");
+  }
+}
+
+.questionmark1988:hover::after {
+  content:"";
+  position: absolute;
+  inset:0; /* top:0; bottom:0; left:0; right:0; */
+  background-color: #0006;
+}
+
 .mario1988 {
   position: absolute;
   width: 2.7em;
-  top: 0.9em;
+  top: 0;
   left: 2em;
   animation-name: marioToTheRight1988, marioToTheBottom1988, marioToTheLeft1988, marioJump1988;
   animation-duration: 1s, 2s, 1s, 2s; 
   animation-iteration-count: 1, 1, 1, 1;
-  animation-delay: 0s, 1.5s, 3.5s, 6.5s;
+  animation-delay: 0s, 1.5s, 4s, 5.5s;
   animation-timing-function: linear, linear, linear, linear;
   animation-fill-mode: forwards, forwards, forwards, forwards;
 }
@@ -145,63 +297,46 @@ button.sound:hover {
     transform: translate(350%, 275%);
   }
   100% {
-    transform: translate(350%, 500%);
+    transform: translate(350%, 492%);
   }
 }
 
 @keyframes marioToTheLeft1988 {
   0% {
-    transform: translate(350%, 500%);
+    transform: translate(350%, 492%);
   }
   100% {
-    transform: translate(240%, 500%);
+    transform: translate(240%, 492%);
   }
 }
 
 @keyframes marioJump1988 {
   0% {
-    transform: translate(240%, 500%);
+    transform: translate(240%, 492%);
     animation-timing-function: ease;
   }
   50% {
-    transform: translate(240%, 450%);
+    transform: translate(240%, 442%);
     animation-timing-function: ease;
   }
   100% {
-    transform: translate(240%, 500%);
+    transform: translate(240%, 492%);
   }
-}
-
-/* @keyframes marioEvolution {
-  100% {
-    transform: translate(245%, 205%);
-    content: url("https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/a9e792fb75ef894.png");
-  }
-} */
-
-/* @keyframes vraagtekenNaarBlok {
-  100% {
-    content: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSYfuz8UaTfUJ-RMmTPjLhd1Y0FIdXYLtI7axAufbBlOkralXAf");
-  }
-} */
-
-.tube {
-  position: absolute;
-  width: 5em;
-  top: 1em;
-  left: 1em;
 }
 
 .goomba1 {
   position: absolute;
   width: 2.7em;
-  top: 19.8em;
+  top: 18.7em;
   left: 11.5em;
-  transform-origin:center bottom;
+  transform-origin: center bottom;
+}
+
+.goomba1.goomba1go {
   animation-name: goombaScale;
-  animation-duration: 1s; 
+  animation-duration: 0.5s; 
   animation-iteration-count: 1;
-  animation-delay: 0s;
+  animation-delay: 2.9s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
@@ -215,65 +350,19 @@ button.sound:hover {
   }
 }
 
-.goomba2 {
+
+
+
+
+/********/
+/* 1989 */
+/********/
+
+.questionmark1989 {
   position: absolute;
   width: 2.7em;
-  top: 19.8em;
-  left: 56.3em;
-}
-
-.goomba3 {
-  position: absolute;
-  width: 2.7em;
-  top: 25.1em;
-  left: 74.8em;
-}
-
-.ster1 {
-  position: absolute;
-  width: 2.7em;
-  top: 14.3em;
-  left: 14em;
-}
-
-.ster2 {
-  position: absolute;
-  width: 2.7em;
-  top: 14.4em;
-  left: 58.9em;
-}
-
-.ster3 {
-  position: absolute;
-  width: 2.7em;
-  top: 19.8em;
-  left: 77.5em;
-}
-
-.vraagteken1 {
-  position: absolute;
-  width: 2.7em;
-  left: 8.6em;
-  top: 6em;
-  animation-name: vraagtekenNaarBlok;
-  animation-duration: 1s; 
-  animation-iteration-count: 1;
-  animation-delay: 4.5s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-@keyframes vraagtekenNaarBlok {
-  100% {
-    content: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSYfuz8UaTfUJ-RMmTPjLhd1Y0FIdXYLtI7axAufbBlOkralXAf");
-  }
-}
-
-#vraagteken2 {
-  position: absolute;
-  width: 2.7em;
-  left: 8.6em;
-  top: 14.4em;
+  left: 21.7em;
+  top: 10.7em;
   cursor: pointer;
   font-size: 1em;
   appearance: none;
@@ -283,160 +372,805 @@ button.sound:hover {
   margin: 0;
 }
 
-#vraagteken2 img{
+.questionmark1989 img {
   display: block;
   width: 100%;
   height: 100%;
   pointer-events: none;
 }
 
-.vraagteken3 {
-  position: absolute;
-  width: 2.7em;
-  left: 21.7em;
-  top: 11.7em;
+.questionmark1989.changed img {
+  /* content:url("../images/marioBlok.png"); */
+  animation-name: questionmark1989Changed;
+  animation-duration: 0s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
 }
 
-.vraagteken4 {
+@keyframes questionmark1989Changed {
+  100% {
+    content:url("../images/marioBlok.png");
+  }
+}
+
+.questionmark1989:hover::after {
+  content:"";
+  position: absolute;
+  inset:0; /* top:0; bottom:0; left:0; right:0; */
+  background-color: #0006;
+}
+
+.mario1989 {
+  position: absolute;
+  width: 2.7em;
+  top: 0;
+  left: 2em;
+  animation-name: marioToTheRight1989, marioDiagonalJump1989, marioToTheRight1989v2, marioJump1989;
+  animation-duration: 1s, 2s, 1s, 1.5s; 
+  animation-iteration-count: 1, 1, 1, 1;
+  animation-delay: 0s, 1.5s, 4s, 5.5s;
+  animation-timing-function: linear, linear, linear, linear;
+  animation-fill-mode: forwards, forwards, forwards, forwards;
+}
+
+@keyframes marioToTheRight1989 {
+  0% {
+    transform: translate(240%, 492%);
+  }
+  100% {
+    transform: translate(340%, 492%);
+  }
+}
+
+@keyframes marioDiagonalJump1989 {
+  0% {
+    transform: translate(340%, 492%);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate(620%, 315%);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate(640%, 415%);
+  }
+}
+
+@keyframes marioToTheRight1989v2 {
+  0% {
+    transform: translate(640%, 415%);
+  }
+  100% {
+    transform: translate(720%, 415%);
+  }
+}
+
+@keyframes marioJump1989 {
+  0% {
+    transform: translate(720%, 415%);
+    animation-timing-function: ease;
+  }
+  50% {
+    transform: translate(720%, 370%);
+    animation-timing-function: ease;
+  }
+  100% {
+    transform: translate(720%, 415%);
+  }
+}
+
+.star1 {
+  position: absolute;
+  width: 2.7em;
+  top: 13.3em;
+  left: 14em;
+}
+
+.star1.star1go {
+  animation-name: disappearStar;
+  animation-duration: 0; 
+  animation-iteration-count: 1;
+  animation-delay: 1.8s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes disappearStar {
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+
+
+/********/
+/* 1991 */
+/********/
+
+.questionmark1991 {
   position: absolute;
   width: 2.7em;
   left: 35.1em;
-  top: 9em;
+  top: 8em;
+  cursor: pointer;
+  font-size: 1em;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
-.vraagteken5 {
-  position: absolute;
-  width: 2.7em;
-  left: 48.3em;
-  top: 6.6em;
+.questionmark1991 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-.vraagteken6 {
-  position: absolute;
-  width: 2.7em;
-  left: 53.7em;
-  top: 14.4em;
+.questionmark1991.changed img {
+  /* content:url("../images/marioBlok.png"); */
+  animation-name: questionmark1991Changed;
+  animation-duration: 0s;
+  animation-delay: 7.5s;
+  animation-fill-mode: forwards;
 }
 
-.vraagteken7 {
-  position: absolute;
-  width: 2.7em;
-  left: 66.9em;
-  top: 12em;
+@keyframes questionmark1991Changed {
+  100% {
+    content:url("../images/marioBlok.png");
+  }
 }
 
-.vraagteken8 {
+.questionmark1991:hover::after {
+  content:"";
+  position: absolute;
+  inset:0; /* top:0; bottom:0; left:0; right:0; */
+  background-color: #0006;
+}
+
+.mario1991 {
   position: absolute;
   width: 2.7em;
-  left: 72.2em;
-  top: 19.8em;
+  top: 0;
+  left: 2em;
+  animation-name: marioToTheRight1991, marioDiagonalJump1991, marioToTheRight1991v2, marioJump1991;
+  animation-duration: 2s, 2s, 1s, 2s; 
+  animation-iteration-count: 1, 1, 1, 1;
+  animation-delay: 0s, 2.5s, 5s, 6.5s;
+  animation-timing-function: linear, linear, linear, linear;
+  animation-fill-mode: forwards, forwards, forwards, forwards;
+}
+
+
+@keyframes marioToTheRight1991 {
+  0% {
+    transform: translate(720%, 415%);
+  }
+  100% {
+    transform: translate(930%, 415%);
+  }
+}
+
+@keyframes marioDiagonalJump1991 {
+  0% {
+    transform: translate(930%, 415%);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate(1100%, 285%);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate(1120%, 345%);
+  }
+}
+
+@keyframes marioToTheRight1991v2 {
+  0% {
+    transform: translate(1120%, 345%);
+  }
+  100% {
+    transform: translate(1225%, 345%);
+  }
+}
+
+@keyframes marioJump1991 {
+  0% {
+    transform: translate(1225%, 345%);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate(1225%, 295%);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate(1225%, 345%);
+  }
 }
 
 .coin1 {
   position: absolute;
   width: 1.8em;
-  left: 19.6em;
-  top: 17.4em;
+  left: 24.9em;
+  top: 16.3em;
+}
+
+.coin1.coin1go {
+  animation-name: disappearCoin;
+  animation-duration: 0; 
+  animation-iteration-count: 1;
+  animation-delay: 0.9s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes disappearCoin {
+  100% {
+    opacity: 0;
+  }
 }
 
 .coin2 {
   position: absolute;
   width: 1.8em;
-  left: 24.9em;
-  top: 17.4em;
+  left: 27.5em;
+  top: 16.3em;
+}
+
+.coin2.coin2go {
+  animation-name: disappearCoin;
+  animation-duration: 0; 
+  animation-iteration-count: 1;
+  animation-delay: 1.9s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+
+
+/********/
+/* 1996 */
+/********/
+
+.questionmark1996 {
+  position: absolute;
+  width: 2.7em;
+  left: 48.3em;
+  top: 5.6em;
+  cursor: pointer;
+  font-size: 1em;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.questionmark1996 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.questionmark1996.changed img {
+  /* content:url("../images/marioBlok.png"); */
+  animation-name: questionmark1996Changed;
+  animation-duration: 0s;
+  animation-delay: 7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes questionmark1996Changed {
+  100% {
+    content:url("../images/marioBlok.png");
+  }
+}
+
+.questionmark1996:hover::after {
+  content:"";
+  position: absolute;
+  inset:0; /* top:0; bottom:0; left:0; right:0; */
+  background-color: #0006;
+}
+
+.mario1996 {
+  position: absolute;
+  width: 2.7em;
+  top: 0;
+  left: 2em;
+  animation-name: marioToTheRight1996, marioDiagonalJump1996, marioToTheRight1996v2, marioJump1996;
+  animation-duration: 2s, 2s, 1s, 2s; 
+  animation-iteration-count: 1, 1, 1, 1;
+  animation-delay: 0s, 2.5s, 4.5s, 6s;
+  animation-timing-function: linear, linear, linear, linear;
+  animation-fill-mode: forwards, forwards, forwards, forwards;
+}
+
+@keyframes marioToTheRight1996 {
+  0% {
+    transform: translate(1225%, 345%);
+  }
+  100% {
+    transform: translate(1420%, 345%);
+  }
+}
+
+@keyframes marioDiagonalJump1996 {
+  0% {
+    transform: translate(1420%, 345%);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate(1600%, 200%);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate(1620%, 275%);
+  }
+}
+
+@keyframes marioToTheRight1996v2 {
+  0% {
+    transform: translate(1620%, 275%);
+  }
+  100% {
+    transform: translate(1705%, 275%);
+  }
+}
+
+@keyframes marioJump1996 {
+  0% {
+    transform: translate(1705%, 275%);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate(1705%, 230%);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate(1705%, 275%);
+  }
 }
 
 .coin3 {
   position: absolute;
   width: 1.8em;
-  left: 27.5em;
-  top: 17.4em;
+  left: 38.2em;
+  top: 13.7em;
+}
+
+.coin3.coin3go {
+  animation-name: disappearCoin;
+  animation-duration: 0; 
+  animation-iteration-count: 1;
+  animation-delay: 0.9s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 .coin4 {
   position: absolute;
   width: 1.8em;
-  left: 32.8em;
-  top: 14.7em;
-}
-
-.coin5 {
-  position: absolute;
-  width: 1.8em;
-  left: 38.2em;
-  top: 14.7em;
-}
-
-.coin6 {
-  position: absolute;
-  width: 1.8em;
   left: 40.8em;
-  top: 14.7em;
+  top: 13.7em;
 }
 
-.coin7 {
+.coin4.coin4go {
+  animation-name: disappearCoin;
+  animation-duration: 0; 
+  animation-iteration-count: 1;
+  animation-delay: 1.9s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+
+
+
+
+/********/
+/* 2002 */
+/********/
+
+.questionmark2002 {
   position: absolute;
-  width: 1.8em;
-  left: 46.1em;
-  top: 12.1em;
+  width: 2.7em;
+  left: 53.7em;
+  top: 13.4em;
+  cursor: pointer;
+  font-size: 1em;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
-.coin8 {
+.questionmark2002 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.questionmark2002.changed img {
+  /* content:url("../images/marioBlok.png"); */
+  animation-name: questionmark2002Changed;
+  animation-duration: 0s;
+  animation-delay: 8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes questionmark2002Changed {
+  100% {
+    content:url("../images/marioBlok.png");
+  }
+}
+
+.questionmark2002:hover::after {
+  content:"";
   position: absolute;
-  width: 1.8em;
-  left: 51.3em;
-  top: 12.1em;
+  inset:0; /* top:0; bottom:0; left:0; right:0; */
+  background-color: #0006;
 }
 
-.coin9 {
+.mario2002 {
   position: absolute;
-  width: 1.8em;
-  left: 64.6em;
-  top: 17.4em;
+  width: 2.7em;
+  top: 0;
+  left: 2em;
+  animation-name: marioToTheRight2002, marioToTheBottom2002, marioToTheLeft2002, marioJump2002;
+  animation-duration: 2.5s, 2s, 1s, 2s; 
+  animation-iteration-count: 1, 1, 1, 1;
+  animation-delay: 0s, 3s, 5.5s, 7s;
+  animation-timing-function: linear, linear, linear, linear;
+  animation-fill-mode: forwards, forwards, forwards, forwards;
 }
 
-.coin10 {
+@keyframes marioToTheRight2002 {
+  0% {
+    transform: translate(1705%, 275%);
+  }
+  100% {
+    transform: translate(2015%, 275%);
+  }
+}
+
+@keyframes marioToTheBottom2002 {
+  0% {
+    transform: translate(2015%, 275%);
+  }
+  100% {
+    transform: translate(2015%, 495%);
+  }
+}
+
+@keyframes marioToTheLeft2002 {
+  0% {
+    transform: translate(2015%, 495%);
+  }
+  100% {
+    transform: translate(1915%, 495%);
+  }
+}
+
+@keyframes marioJump2002 {
+  0% {
+    transform: translate(1915%, 495%);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate(1915%, 430%);
+    animation-timing-function: ease-out;
+  }  
+  100% {
+    transform: translate(1915%, 495%);
+  }
+}
+
+.goomba2 {
   position: absolute;
-  width: 1.8em;
-  left: 69.9em;
-  top: 17.4em;
+  width: 2.7em;
+  top: 18.7em;
+  left: 56.3em;
+  transform-origin: center bottom;
 }
 
-.coin11 {
+.goomba2.goomba2go {
+  animation-name: goombaScale;
+  animation-duration: 0.5s; 
+  animation-iteration-count: 1;
+  animation-delay: 4.3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+
+
+
+
+/********/
+/* 2006 */
+/********/
+
+.questionmark2006 {
   position: absolute;
-  width: 1.8em;
-  left: 72.6em;
-  top: 17.4em;
+  width: 2.7em;
+  left: 66.9em;
+  top: 11em;
+  cursor: pointer;
+  font-size: 1em;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
-.vlag {
+.questionmark2006 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.questionmark2006.changed img {
+  /* content:url("../images/marioBlok.png"); */
+  animation-name: questionmark2006Changed;
+  animation-duration: 0s;
+  animation-delay: 6.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes questionmark2006Changed {
+  100% {
+    content:url("../images/marioBlok.png");
+  }
+}
+
+.questionmark2006:hover::after {
+  content:"";
   position: absolute;
-  width: 4em;
-  left: 80.8em;
-  top: 26.7em;
+  inset:0; /* top:0; bottom:0; left:0; right:0; */
+  background-color: #0006;
 }
 
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
+.mario2006 {
+  position: absolute;
+  width: 2.7em;
+  top: 0;
+  left: 2em;
+  animation-name: marioToTheRight2006, marioDiagonalJump2006, marioToTheRight2006v2, marioJump2006;
+  animation-duration: 1s, 2s, 1s, 2s; 
+  animation-iteration-count: 1, 1, 1, 1;
+  animation-delay: 0s, 1.5s, 4s, 5.5s;
+  animation-timing-function: linear, linear, linear, linear;
+  animation-fill-mode: forwards, forwards, forwards, forwards;
+}
 
-:root {
-  --color-headings: black;
+@keyframes marioToTheRight2006 {
+  0% {
+    transform: translate(1915%, 495%);
+  }
+  100% {
+    transform: translate(2000%, 495%);
+  }
+}
+
+@keyframes marioDiagonalJump2006 {
+  0% {
+    transform: translate(2000%, 495%);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translate(2280%, 345%);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate(2300%, 415%);
+  }
+}
+
+@keyframes marioToTheRight2006v2 {
+  0% {
+    transform: translate(2300%, 420%);
+  }
+  100% {
+    transform: translate(2405%, 420%);
+  }
+}
+
+@keyframes marioJump2006 {
+  0% {
+    transform: translate(2405%, 420%);
+    animation-timing-function: ease;
+  }
+  50% {
+    transform: translate(2405%, 375%);
+    animation-timing-function: ease;
+  }
+  100% {
+    transform: translate(2405%, 420%);
+  }
+}
+
+.star2 {
+  position: absolute;
+  width: 2.7em;
+  top: 13.4em;
+  left: 58.9em;
+}
+
+.star2.star2go {
+  animation-name: disappearStar;
+  animation-duration: 0; 
+  animation-iteration-count: 1;
+  animation-delay: 1.8s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 
 
 
 
-/********************/
-/* ALGEMENE STYLING */
-/********************/
+/********/
+/* 2007 */
+/********/
 
-h1 {
-  color:var(--color-headings);
+.questionmark2007 {
+  position: absolute;
+  width: 2.7em;
+  left: 72.2em;
+  top: 18.8em;
+  cursor: pointer;
+  font-size: 1em;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
+.questionmark2007 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
 
-/* ... */
+.questionmark2007.changed img {
+  /* content:url("../images/marioBlok.png"); */
+  animation-name: questionmark2007Changed;
+  animation-duration: 0s;
+  animation-delay: 9s;
+  animation-fill-mode: forwards;
+}
 
+@keyframes questionmark2007Changed {
+  100% {
+    content:url("../images/marioBlok.png");
+  }
+}
 
+.questionmark2007:hover::after {
+  content:"";
+  position: absolute;
+  inset:0; /* top:0; bottom:0; left:0; right:0; */
+  background-color: #0006;
+}
+
+.mario2007 {
+  position: absolute;
+  width: 2.7em;
+  top: 0;
+  left: 2em;
+  animation-name: marioToTheRight2007, marioToTheBottom2007, marioToTheLeft2007, marioJump2007, marioToTheRight2007v2, marioDiagnonalJump2007;
+  animation-duration: 2.5s, 2s, 1s, 2s, 1s, 2s; 
+  animation-iteration-count: 1, 1, 1, 1, 1, 1;
+  animation-delay: 0s, 3s, 6s, 8s, 10.5s, 12s;
+  animation-timing-function: linear, linear, linear, linear, linear, linear;
+  animation-fill-mode: forwards, forwards, forwards, forwards, forwards, forwards;
+}
+
+@keyframes marioToTheRight2007 {
+  0% {
+    transform: translate(2405%, 420%);
+  }
+  100% {
+    transform: translate(2705%, 420%);
+  }
+}
+
+@keyframes marioToTheBottom2007 {
+  0% {
+    transform: translate(2705%, 420%);
+  }
+  100% {
+    transform: translate(2705%, 640%);
+  }
+}
+
+@keyframes marioToTheLeft2007 {
+  0% {
+    transform: translate(2705%, 640%);
+  }
+  100% {
+    transform: translate(2605%, 640%);
+  }
+}
+
+@keyframes marioJump2007 {
+  0% {
+    transform: translate(2605%, 640%);
+    animation-timing-function: ease;
+  }
+  50% {
+    transform: translate(2605%, 590%);
+    animation-timing-function: ease;
+  }
+  100% {
+    transform: translate(2605%, 640%);
+  }
+}
+
+@keyframes marioToTheRight2007v2 {
+  0% {
+    transform: translate(2605%, 640%);
+  }
+  100% {
+    transform: translate(2705%, 640%);
+  }
+}
+
+@keyframes marioDiagnonalJump2007 {
+  0% {
+    transform: translate(2705%, 640%);
+  }
+  33% {
+    transform: translate(2935%, 490%);
+  }
+  66% {
+    transform: translate(2955%, 640%);
+  }
+  100% {
+    transform: translate(2955%, 1001%);
+  }
+}
+
+.goomba3 {
+  position: absolute;
+  width: 2.7em;
+  top: 24em;
+  left: 74.8em;
+  transform-origin: center bottom;
+}
+
+.goomba3.goomba3go {
+  animation-name: goombaScale;
+  animation-duration: 0.5s; 
+  animation-iteration-count: 1;
+  animation-delay: 4.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.star3 {
+  position: absolute;
+  width: 2.7em;
+  top: 18.8em;
+  left: 77.5em;
+}
+
+.star3.star3go {
+  animation-name: disappearStar;
+  animation-duration: 0; 
+  animation-iteration-count: 1;
+  animation-delay: 12.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}

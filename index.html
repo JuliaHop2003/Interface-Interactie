@@ -6,82 +6,68 @@
 	<meta name="author" content="Julia Hop">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>VIDii 2022/23 - Tijdlijn Mario</title>
+	<title>VIDii 2022/23 - The evolution of Mario</title>
 	
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
 
 <body>
-	<img class="background" src="images/marioBackground.png" alt="Mario mario achtergrond">
-
 	<header>
-		<h1 id="titel">The evolution of Mario</h1>
-		<p id="paragraaf">A history of how Mario has evolved from the 80's to modern day.</p>
+		<h1>The evolution of Mario</h1>
+		<p>A history of how Mario has evolved from the 80's to modern day. Press on the first block with a question mark to start</p>
 	</header>
 	
 	<main>
-		<!-- de tijdlijn zelf is een ordered list -->
-
-		<!-- elk list-item is een punt in tijd -->
-		<!-- 11 list-items om te starten -->
-		<!-- bepaal zelf hoeveel je er nodig hebt -->
-		
-		<!-- in elk listitem staat nu een link -->
-		<!-- de link kun je vullen met jouw content -->
-		<!-- of in zijn geheel vervangen door jouw content -->
+		<img class="background" src="images/marioBackground.png" alt="Mario background light" media="(prefers-color-scheme: light)">
+		<img class="background" src="images/marioBackgroundDark.png" alt="Mario background dark" media="(prefers-color-scheme: dark)">
+		<img class="flag" src="images/flag.png" alt="flag">
 		<img class="mario" src="images/mario1983.png" alt="Mario character">
+		<img class="tube" src="images/marioTube.png" alt="tube">
 
 		<ol>
 			<li>
-				<img class="vraagteken1" src="images/marioVraagteken.png" alt="Mario vraagteken 1">
+				<button class="questionmark1983"><img src="images/marioQuestionmark.png" alt="1983"></button>
 			</li>
 			<li>
-				<button id="vraagteken2"><img src="images/marioVraagteken.png" alt="Mario vraagteken 2"></button>
-				<img class="ster1" src="images/ster.png" alt="Ster 1">
+				<button class="questionmark1988"><img src="images/marioQuestionmark.png" alt="1988"></button>
 				<img class="goomba1" src="images/goomba.png" alt="Goomba 1">
 			</li>
 			<li>
-				<img class="vraagteken3" src="images/marioVraagteken.png" alt="Mario vraagteken 3">
+				<button class="questionmark1989"><img src="images/marioQuestionmark.png" alt="1989"></button>
+				<img class="star1" src="images/star.png" alt="star 1">
+			</li>
+			<li>
+				<button class="questionmark1991"><img src="images/marioQuestionmark.png" alt="1991"></button>
 				<img class="coin1" src="images/coin.png" alt="coin 1">
 				<img class="coin2" src="images/coin.png" alt="coin 2">
+
+			</li>
+			<li>
+				<button class="questionmark1996"><img src="images/marioQuestionmark.png" alt="1996"></button>
 				<img class="coin3" src="images/coin.png" alt="coin 3">
+				<img class="coin4" src="images/coin.png" alt="coin 4">=
 			</li>
 			<li>
-				<img class="vraagteken4" src="images/marioVraagteken.png" alt="Mario vraagteken 4">
-				<img class="coin4" src="images/coin.png" alt="coin 4">
-				<img class="coin5" src="images/coin.png" alt="coin 5">
-				<img class="coin6" src="images/coin.png" alt="coin 6">
-			</li>
-			<li>
-				<img class="vraagteken5" src="images/marioVraagteken.png" alt="Mario vraagteken 5">
-				<img class="coin7" src="images/coin.png" alt="coin 7">
-				<img class="coin8" src="images/coin.png" alt="coin 8">
-			</li>
-			<li>
-				<img class="vraagteken6" src="images/marioVraagteken.png" alt="Mario vraagteken 6">
+				<button class="questionmark2002"><img src="images/marioQuestionmark.png" alt="2002"></button>
 				<img class="goomba2" src="images/goomba.png" alt="Goomba 2">
-				<img class="ster2" src="images/ster.png" alt="Ster 2">
+				<img class="star2" src="images/star.png" alt="star 2">
 			</li>
 			<li>
-				<img class="vraagteken7" src="images/marioVraagteken.png" alt="Mario vraagteken 7">
-				<img class="coin9" src="images/coin.png" alt="coin 9">
-				<img class="coin10" src="images/coin.png" alt="coin 10">
-				<img class="coin11" src="images/coin.png" alt="coin 11">
+				<button class="questionmark2006"><img src="images/marioQuestionmark.png" alt="2006"></button>
 			</li>
 			<li>
-				<img class="vraagteken8" src="images/marioVraagteken.png" alt="Mario vraagteken 8">
+				<button class="questionmark2007"><img src="images/marioQuestionmark.png" alt="2007"></button>
 				<img class="goomba3" src="images/goomba.png" alt="Goomba 3">
-				<img class="ster3" src="images/ster.png" alt="Ster 3">
+				<img class="star3" src="images/star.png" alt="star 3">
 			</li>
 		</ol>
-
-		<img class="tube" src="images/marioTube.png" alt="Mario tube">
-		<img class="vlag" src="images/vlag.png" alt="vlag">
-		<button class="sound">Sound on</button>
+		
+		<button class="musicButton">Music on</button>
+		<audio>
+			<source src="audio/marioMusic.mp3" type="audio/mpeg">
+		</audio>
 	</main>
-
 	<script src="scripts/script.js"></script>
 </body>
-	
 </html>
