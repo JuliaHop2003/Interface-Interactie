@@ -55,23 +55,19 @@ Mijn startniveau is: Rood
 
   - Het is opgelost doordat de blokken met een vraagteken erop altijd klikbaar blijven.
 
-
   ### Bevinding 2:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
   - Het was nog niet duidelijk wat er zou gebeuren als Mario zal vallen.
-
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
   - Het is opgelost doordat Mario niet zelf bestuurt kan worden door de gebruiker (Mario volgt een automatische route).
 
-
   ### Bevinding 3:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
   - Het was nog niet duidelijk wat er met de Goomba's zou gebeuren als Mario erop zou springen.
-  
   
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
@@ -96,7 +92,7 @@ Mijn startniveau is: Rood
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
-  - Het is opgelost door de background-image de height te geven van mijn macBook (47.688em).
+  - Het is opgelost door de background-image de height te geven van mijn MacBook (47.688em).
 
   ### Bevinding 2:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
@@ -137,6 +133,8 @@ Mijn startniveau is: Rood
 
   - Dit is heel moeilijk om op te lossen, dus daarom is het nu makkelijk opgelost doordat de pagina wegsnijdt als je het venster beweegt.
 
+  <img src="readme-images/vensterSnijden.png" width="375px" alt="venster snijden">
+
   ### Bevinding 2:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
@@ -146,6 +144,8 @@ Mijn startniveau is: Rood
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
   - Ik heb expres geen focus en active state toegevoegd, want ik vind de blauwe rand die eromheen komt duidelijk genoeg en anders komt er een kleur over de blokken met het vraagteken erop en dan is het vraagteken niet meer zichtbaar.
+
+  <img src="readme-images/activeState.png" width="375px" alt="active state">
 
   ### Bevinding 3:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
@@ -167,7 +167,7 @@ Mijn startniveau is: Rood
   <summary>Mijn eindresultaat & persoonlijke ontwikkeling</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/finalOntwerp.png" width="375px" alt="final ontwerp">
+  <img src="readme-images/finalOntwerp.jpeg" width="375px" alt="final ontwerp">
 
 
   ### Dit ging goed/Heb ik geleerd: 
